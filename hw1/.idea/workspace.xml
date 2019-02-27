@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5d71f2-52bd-4a0d-ba0e-44f44286dc6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../artificial_intelligence/HanoiModelling/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artificial_intelligence/HanoiModelling/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../csso/Tema_2" beforeDir="false" afterPath="$PROJECT_DIR$/../csso/Tema_2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neural_networks/h3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../neural_networks/h3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neural_networks/h3/.idea/workspace.xml___jb_tmp___" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neural_networks/h3/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/../neural_networks/h3/neural_network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neural_networks/h3/output_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../neural_networks/h3/output_layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,19 +13,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/hw1$my_service.coverage" NAME="my_service Coverage Results" MODIFIED="1551284089171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw1$my_service.coverage" NAME="my_service Coverage Results" MODIFIED="1551285444583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cloud_computing$server.coverage" NAME="server Coverage Results" MODIFIED="1551283577124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cloud_computing$my_service.coverage" NAME="my_service Coverage Results" MODIFIED="1551283571113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hw1$server.coverage" NAME="server Coverage Results" MODIFIED="1551284085235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hw1$server.coverage" NAME="server Coverage Results" MODIFIED="1551285449385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cloud_computing$Unnamed.coverage" NAME="server Coverage Results" MODIFIED="1550839269764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="306">
+              <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -37,10 +34,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/metrics.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            <state relative-caret-position="221">
+              <caret line="44" column="102" selection-start-line="44" selection-start-column="102" selection-end-line="44" selection-end-column="102" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -80,12 +86,12 @@
         <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/config" />
-        <option value="$PROJECT_DIR$/my_service.py" />
         <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/my_service.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1050" />
@@ -97,7 +103,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hw1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hw1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -124,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.my_service">
+  <component name="RunManager" selected="Python.server">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="hw1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -211,21 +227,23 @@
       <workItem from="1551178467744" duration="270000" />
       <workItem from="1551262645264" duration="2541000" />
       <workItem from="1551284047229" duration="93000" />
+      <workItem from="1551284922710" duration="527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11448000" />
+    <option name="totallyTimeSpent" value="11741000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26396647" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26396647" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39944133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -272,20 +290,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_service.py">
+    <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        <state relative-caret-position="306">
+          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
+    <entry file="file://$PROJECT_DIR$/metrics.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="44" column="102" selection-start-line="44" selection-start-column="102" selection-end-line="44" selection-end-column="102" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

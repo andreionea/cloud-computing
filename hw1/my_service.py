@@ -41,7 +41,9 @@ class ReqHandler(Handler):
         response = requests.get('https://api.imagga.com/v2/tags?image_url=%s' % url,
                                 auth=(api_key, api_secret))
         print("[my_service] GET completed in " + str(response.elapsed))
-
+        metrics_f = open("metrics.txt", "w+")
+        metrics_f.write("[my_service] GET completed in " + str(response.elapsed) + ' with headers '+ str(response.headers))
+        metrics_f.close()
         dic = json.loads(response.content)
         top_prediction_name = dict(dic.get('result').get('tags')[:1][0]).get('tag').get('en')
         top_prediction_confidence = dict(dic.get('result').get('tags')[:1][0]).get('confidence')

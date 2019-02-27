@@ -6,7 +6,6 @@ PORT = 8080
 
 Handler = http.server.BaseHTTPRequestHandler
 
-
 class ReqHandler(Handler):
 
     def do_GET(self):
@@ -16,6 +15,13 @@ class ReqHandler(Handler):
             self.end_headers()
             content = bytes(self.make_html(), encoding="UTF-8")
             self.wfile.write(content)
+
+        elif self.path == "/metrics":
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html')
+            self.end_headers()
+            content = open("metrics.txt").read()
+            self.wfile.write(bytes(content, encoding='UTF-8'))
 
         return
 
