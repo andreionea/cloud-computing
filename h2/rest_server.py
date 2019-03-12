@@ -6,6 +6,7 @@ from bson.json_util import dumps
 from bson.objectid import ObjectId
 import re
 from bson.errors import InvalidId
+import json
 
 db_client = MongoClient('mongodb://localhost:27017/')
 
@@ -45,9 +46,25 @@ class ReqHandler(server.BaseHTTPRequestHandler):
                 self.send_response(400)
                 self.send_header('content-type', 'text/html')
                 self.end_headers()
-                self.wfile.write(b'<h1>403</h1> bad request, invalid id')
+                self.wfile.write(b'<h1>400</h1> bad request, invalid id')
 
         return
+
+    def do_POST(self):
+        if self.path == '/customers':
+            req_body_raw = self.rfile.read()
+            req_body_json = json.loads(req_body_raw)
+            print(req_body_json)
+            insert_result = customer_collection.insert_one(req_body_json)
+            if insert_result.inserted_id is not None:
+                self.send_response(201)
+                self.send_header('location', 'http://localhost:8080/customers/id=' + str(insert_result.inserted_id))
+                self.send_header('content-type', 'text/html')
+                self.end_headers()
+                print("end headers")
+                self.wfile.write(b'<h1>201</h1> created')
+
+
 
 
 server = server.HTTPServer(('', 8080), ReqHandler)
