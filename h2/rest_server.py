@@ -52,19 +52,24 @@ class ReqHandler(server.BaseHTTPRequestHandler):
 
     def do_POST(self):
         if self.path == '/customers':
-            req_body_raw = self.rfile.read()
+            print("executing post")
+            content_length = int(self.headers['Content-Length'])
+            req_body_raw = self.rfile.read(content_length)
+            print("read")
+            print(req_body_raw)
             req_body_json = json.loads(req_body_raw)
-            print(req_body_json)
+            print("loaded json")
             insert_result = customer_collection.insert_one(req_body_json)
-            if insert_result.inserted_id is not None:
-                self.send_response(201)
-                self.send_header('location', 'http://localhost:8080/customers/id=' + str(insert_result.inserted_id))
-                self.send_header('content-type', 'text/html')
-                self.end_headers()
-                print("end headers")
-                self.wfile.write(b'<h1>201</h1> created')
+            print("inserted")
+            # if insert_result.inserted_id is not None:
+            self.send_response(201)
+            self.send_header('Location', 'http://localhost:8080/customers/id=' + str(insert_result.inserted_id))
+            self.send_header('content-type', 'text/html')
+            self.end_headers()
+            print("end headers")
+            self.wfile.write(b'<h1>201</h1> created')
 
-
+        return
 
 
 server = server.HTTPServer(('', 8080), ReqHandler)
