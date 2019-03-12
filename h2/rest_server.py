@@ -16,9 +16,8 @@ class ReqHandler(server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/customers":
-            #self.send_response(100)
             result = dumps([i for i in customer_collection.find()])
-            print(result)
+            pprint(result)
             self.send_response(200)
             self.send_header('content-type', 'application/json')
             self.end_headers()
