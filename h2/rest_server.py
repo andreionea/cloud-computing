@@ -69,6 +69,27 @@ class ReqHandler(server.BaseHTTPRequestHandler):
             print("end headers")
             self.wfile.write(b'<h1>201</h1> created')
 
+        elif re.match('/customers/id=', self.path):
+            id = re.split('id=', self.path)[-1]
+            try:
+                result = dumps(customer_collection.find_one({"_id": ObjectId(id)}))
+                pprint(result)
+                if result is not 'null':
+                    self.send_response(409)
+                    self.send_header('content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<h1>409</h1> conflict, resource already exists')
+                else:
+                    self.send_response(404)
+                    self.send_header('content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<h1>404</h1> not found')
+            except InvalidId:
+                self.send_response(400)
+                self.send_header('content-type', 'text/html')
+                self.end_headers()
+                self.wfile.write(b'<h1>400</h1> bad request, invalid id')
+
         return
 
 
