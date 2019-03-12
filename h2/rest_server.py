@@ -135,6 +135,23 @@ class ReqHandler(server.BaseHTTPRequestHandler):
 
         return
 
+    def do_DELETE(self):
+        if self.path == '/customers':
+            self.send_response(405)
+            self.send_header('content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b'<h1>405</h1> delete method not allowed')
+
+        elif re.match('/customers/id=', self.path):
+            id = re.split('id=', self.path)[-1]
+            result = dumps(customer_collection.find_one({"_id": ObjectId(id)}))
+            if result is not 'null':
+                customer_collection.find_one_and_delete({"_id": ObjectId(id)})
+                self.send_response(200)
+                self.send_header('content-type', 'text/html')
+                self.end_headers()
+                self.wfile.write(b'<h1>200</h1> deleted iz oke')
+
 
 server = server.HTTPServer(('', 8080), ReqHandler)
 server.serve_forever()
