@@ -20,6 +20,22 @@ user_schema = {
         "age": {"type": "number"}
     }
 }
+customer_patch_schema = {
+    "anyOf": [
+        {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"}
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "age": {"type": "number"}
+            }
+        }
+    ]
+}
 
 
 class ReqHandler(server.BaseHTTPRequestHandler):
@@ -151,6 +167,40 @@ class ReqHandler(server.BaseHTTPRequestHandler):
                 self.send_header('content-type', 'text/html')
                 self.end_headers()
                 self.wfile.write(b'<h1>200</h1> deleted iz oke')
+
+    def do_PATCH(self):
+        if self.path == '/customers':
+            self.send_response(405)
+            self.send_header('content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b'<h1>405</h1> method not allowed on collection')
+
+        try:
+            if re.match('/customers/id=', self.path):
+                id = re.split('id=', self.path)[-1]
+                content_length = int(self.headers['Content-Length'])
+                req_body_raw = self.rfile.read(content_length)
+                req_body_json = json.loads(req_body_raw)
+                validate(instance=req_body_json, schema=user_schema)
+                result = dumps(customer_collection.find_one({"_id": ObjectId(id)}))
+                if result is not 'null':
+                    customer_collection.find_one_and_update({"_id": ObjectId(id)}, {'$set': req_body_json})
+                    self.send_response(200)
+                    self.send_header('content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<h1>200</h1> iz oke')
+                else:
+                    self.send_response(404)
+                    self.send_header('content-type', 'text/html')
+                    self.end_headers()
+                    self.wfile.write(b'<h1>404</h1> customer not found')
+        except ValidationError:
+            self.send_response(400)
+            self.send_header('content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b'<h1>400</h1> bad request, invalid schema')
+
+        return
 
 
 server = server.HTTPServer(('', 8080), ReqHandler)
