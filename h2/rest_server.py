@@ -167,6 +167,11 @@ class ReqHandler(server.BaseHTTPRequestHandler):
                 self.send_header('content-type', 'text/html')
                 self.end_headers()
                 self.wfile.write(b'<h1>200</h1> deleted iz oke')
+            else:
+                self.send_response(404)
+                self.send_header('content-type', 'text/html')
+                self.end_headers()
+                self.wfile.write(b'<h1>404</h1> not found')
 
     def do_PATCH(self):
         if self.path == '/customers':
