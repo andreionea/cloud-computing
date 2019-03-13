@@ -17,7 +17,7 @@ user_schema = {
     "type": "object",
     "properties": {
         "name": {"type": "string"},
-        "age": {"type": "number"}
+        "age": {"type": "number", "minimum": 0}
     }
 }
 customer_patch_schema = {
@@ -31,7 +31,7 @@ customer_patch_schema = {
         {
             "type": "object",
             "properties": {
-                "age": {"type": "number"}
+                "age": {"type": "number", "minimum": 0}
             }
         }
     ]
