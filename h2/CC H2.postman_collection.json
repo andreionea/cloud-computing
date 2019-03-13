@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "4b62a5c8-92b1-477c-85b7-471581c38817",
+		"name": "CC H2",
+		"description": "collection of supported requests for my CC 2nd hw",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				},
+				"description": "gets all customers"
+			},
+			"response": []
+		},
+		{
+			"name": "GET item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c8779dd91bf194240d9cf11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c8779dd91bf194240d9cf11"
+					]
+				},
+				"description": "gets a customer by id"
+			},
+			"response": []
+		},
+		{
+			"name": "GET 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=1234d4ae91bf191e48534c42",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=1234d4ae91bf191e48534c42"
+					]
+				},
+				"description": "not found by id"
+			},
+			"response": []
+		},
+		{
+			"name": "GET bad id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=1234",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=1234"
+					]
+				},
+				"description": "bad request caused by invalid id"
+			},
+			"response": []
+		},
+		{
+			"name": "POST on collection",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"New Customer\",\n\t\"age\": 40\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				},
+				"description": "posts a user successfully"
+			},
+			"response": []
+		},
+		{
+			"name": "POST on existing item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c8779dd91bf194240d9cf11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c8779dd91bf194240d9cf11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST on item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c8000dd91bf194240d9cf11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c8000dd91bf194240d9cf11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT on collection",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT on item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Modified name\",\n\t\"age\": 72\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c89124d91bf19246ce75b3a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c89124d91bf19246ce75b3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT on item non-existent id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"new name\",\n\t\"age\": 5\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c89139a91bf19246ce75c3c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c89139a91bf19246ce75c3c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE collection",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE existing item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c8779dd91bf194240d9cf11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c8779dd91bf194240d9cf11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE non existent item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c8779dd91bf194240d9cf22",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c8779dd91bf194240d9cf22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH on collection",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH on existing item",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"tot marcela\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c877a71de41f431548e49cb",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c877a71de41f431548e49cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH bad schema",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"age\": -22\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customers/id=5c877a71de41f431548e49cb",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"id=5c877a71de41f431548e49cb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
